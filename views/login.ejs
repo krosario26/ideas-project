@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <% include partials/pages/head.ejs %>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Log In</h1>
+    </div>
+    <!-- Sign In Form -->
+    <form class="container" method="post" action="/login">
+      <input class="input-block-level" type="text" name="username" placeholder="Username"/>
+      <input class="input-block-level" type="password" name="password" placeholder="Password"/>
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+    <!-- End of Log In Form -->
+
+    <% include partials/pages/scripts.ejs %>
+  </body>
+</html>
