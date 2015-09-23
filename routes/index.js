@@ -23,6 +23,12 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/login'
 }));
 
+/* Logout from your session */
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('login');
+})
+
 /* Wrong url redirect to home page or log in page */
 router.get('*', function(req, res) {
   res.redirect('/');
