@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(session({
   secret: '5286974120385002',
-  resave: false,
+  resave: true,
   saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
