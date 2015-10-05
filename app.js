@@ -33,8 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-//Connecting to my database
-mongoose.connect('mongodb://127.0.0.1/myWebApp');
+/// Connecting to my database
+mongoose.connect('mongodb://127.0.0.1/socialWebApp');
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,45 @@
+body {
+  padding: 20px;
+}
+body .align-left {
+  text-align: right;
+}
+body .align-left .btn-primary {
+  width: 100px;
+  height: 60px;
+  font-size: 25px;
+  background-color: #fff;
+  border-color: #333;
+  color: #333;
+  border-radius: 0;
+  border-width: 2px;
+  transition-duration: 0.2s;
+}
+body .align-left .btn-primary:hover {
+  background-color: #333;
+  border-color: #fff;
+  color: #fff;
+  transition-duration: 0.2s;
+}
+body .align-left .btn-primary:focus {
+  border-color: #000;
+}
+body .centered .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-22%, -75%);
+}
+body .centered .container .signUpForm .form-control {
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+}
+body .centered .container .signUpForm .btn-danger {
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+}
+body .modal-body .form-control {
+  width: 70%;
+}

@@ -7,25 +7,22 @@ var router = express.Router();
 router.get('/', function(req, res) {
   //Redirect if not a user
   if (!req.user) {
-    res.redirect('/login');
+    res.redirect('/signup');
   } else {
     res.render('index', { title: 'Express', username: req.user.username });
   }
 });
 
 /* GET register page */
-router.get('/register', function(req, res) {
-  res.render('register', { title: 'Express' });
-});
-
-/* GET login page */
-router.get('/login', function(req, res) {
-  res.render('login');
+router.get('/signup', function(req, res) {
+  res.render('signup', { title: 'Express' });
 });
 
 /* Register new user */
-router.post('/register', function(req, res) {
+router.post('/signup', function(req, res) {
   var newUser = new User();
+  newUser.fullName = req.body.fullName;
+  newUser.email = req.body.email;
   newUser.username = req.body.username;
   newUser.password = req.body.password;
   console.log(newUser.username + " " + newUser.password);
@@ -42,13 +39,13 @@ router.post('/register', function(req, res) {
 /* Post login form from login view*/
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/login'
+  failureRedirect: '/signup'
 }));
 
 /* Logout from your session */
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('login');
+  res.redirect('signup');
 })
 
 /* Wrong url redirect to home page or log in page */
